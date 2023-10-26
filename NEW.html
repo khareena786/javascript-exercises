@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #b5d3ee;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 20px;
+    }
+
+
+
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+
+
+    label {
+        display: block;
+        font-weight: bold;
+    }
+
+
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+
+
+    button {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+
+
+    #result {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+<h1>Search Page</h1>
+<p>Enter a station code to search for the station name:</p>
+<form>
+<input type="text" id="searchBoxCode" placeholder="Enter station code...">
+<button type="button" onclick="searchStationByCode()">Search</button>
+</form>
+
+ 
+
+    <p>Enter a station name to search for the station code:</p>
+<form>
+<input type="text" id="searchBoxName" placeholder="Enter station name...">
+<button type="button" onclick="searchStationByName()">Search</button>
+</form>
+
+ 
+
+    <div id="result"></div>
+
+ 
+
+    <script>
+        const stationData = [
+            { code: "MAN", name: "Manchester Piccadilly" },
+            { code: "LON", name: "London Paddington" },
+            { code: "BIR", name: "Birmingham New Street" },
+            { code: "LIV", name: "Liverpool Lime Street" },
+            { code: "LEE", name: "Leeds Station" },
+            // Add more station data as needed
+        ];
+
+ 
+
+        function searchStationByCode() {
+            const searchTerm = document.getElementById('searchBoxCode').value.trim().toUpperCase();
+            const resultDiv = document.getElementById('result');
+
+ 
+
+            const station = stationData.find(entry => entry.code === searchTerm);
+
+ 
+
+            if (station) {
+                const stationName = `Station Name: ${station.name}`;
+                resultDiv.textContent = stationName;
+                console.log(stationName); // Log station name to console
+            } else {
+                resultDiv.textContent = "Station not found.";
+                console.log("Station not found."); // Log a message to console
+            }
+        }
+
+ 
+
+        function searchStationByName() {
+            const searchTerm = document.getElementById('searchBoxName').value.trim();
+            const resultDiv = document.getElementById('result');
+
+ 
+
+            const station = stationData.find(entry => entry.name.toLowerCase() === searchTerm.toLowerCase());
+
+ 
+
+            if (station) {
+                const stationCode = `Station Code: ${station.code}`;
+                resultDiv.textContent = stationCode;
+                console.log(stationCode); // Log station code to console
+            } else {
+                resultDiv.textContent = "Station not found.";
+                console.log("Station not found."); // Log a message to console
+            }
+        }
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="audio-controls"></div>
+    <script>
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const audioCtx = new AudioContext();
+
+        const audiosources= [
+            {name: "song1", src:"Heeriye(PaglaSongs).mp3"},
+            {name: "song2", src:"Aagi Aagi - Ee Nagaraniki Emaindi ! Telugu.mp3"}
+        ];
+
+        function createAudioElements(){
+            const audiocontrols=document.getElementById("audio-controls");
+
+             audioSources.forEach((source,index))  {
+            const audioElement=document.createElement("audio");
+            audioElement.id= audio${index + 1};
+            audioElement.src=source.src;
+            audioElement.preload="auto"
+
+            const playButton = document.createElement("button");
+            playButton.className="paused";
+            playButton.textContent= Play $(source.name);
+            playButton.dataset.audio= audio${index+1};
+
+            audiocontrols.appendChild(audioElement);
+            audiocontrols.appendChild(playButton);
+
+             };
+            }
+             createAudioElements();
+
+        }
+    </script>
+</body>
+</html>

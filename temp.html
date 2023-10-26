@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Page</title>
+</head>
+<body>
+<h1>Search Page</h1>
+<p>Enter your search query below:</p>
+<form>
+<input type="text" id="searchBox" placeholder="Search...">
+<button type="submit">Search</button>
+</form>
+<script>
+        const englandStationNames = [
+            "London Paddington",
+            "Manchester Piccadilly",
+            "Birmingham New Street",
+            "Liverpool Lime Street",
+            "Leeds Station",
+            // Add more station names as needed
+        ];
+
+ 
+
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+ 
+
+            const searchTerm = document.querySelector('#searchBox').value.trim();
+
+ 
+
+            if (englandStationNames.includes(searchTerm)) {
+                console.log(`Station found: ${searchTerm}`);
+            } else {
+                console.log(`Station not found: ${searchTerm}`);
+            }
+        });
+</script>
+</body>
+</html>

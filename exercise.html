@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- styling the p & h1 elements -->
+    <p id="demo" style="background-color: yellow; border-radius: 15px; text-align: center;"></p>
+    <h1 id="demo1" style="background-color: aquamarine; border-radius: 15px; text-align: center;"></h1>
+    <h3 id="Education" style="background-color: rgb(231, 126, 228); border-radius: 15px; text-align: center;"></h3>
+    <div id="details" style="text-align: center; font-size: large;" ></div>
+    <div id="examp"style="text-align: center; font-size: large;"></div>
+    <div id="eg"style="text-align: center; font-size: large;"></div>
+  
+    
+    <button type="button"style="text-align: center; font-size: large; border-radius: 15px;" onclick="myFunction()"><b> Personal Details</b></button>
+    <div id="work"style="text-align: center; font-size: large;"></div>
+    <p id="arrays" style="padding:40; border-radius: 15px; text-align: center; font-size: larger; background-color:grey"></p>
+    <p id="Hobby"style="text-align: center; font-family:bold;"></p>
+    <script>
+        //varibales in js 
+       var names = "<h1>KHAREENA SHAIK</h1>";
+        var role = "Associate Software Engineer";
+        var edu = " Education Details";
+        document.getElementById("demo").innerHTML = names;
+        document.getElementById("demo1").innerHTML = role;
+        document.getElementById("Education").innerHTML = edu;
+    //creating an object 
+        const example = {type:"SBIT",  color:"white"};
+        document.getElementById("details").innerHTML = "<b>B.Tech :</b> " + example.type ;
+        const exam = {type:"RESONANCE JUNIOR COLLEGE",  color:"white"};
+        document.getElementById("examp").innerHTML = "<b>Intermediate: </b> " + exam.type ;
+        const exa = {type:"RESONANCE SCHOOL",  color:"white"};
+        document.getElementById("eg").innerHTML = "<b>Schooling:</b> " + exa.type ;
+
+    //function
+    function myFunction() {
+   document.getElementById("work").innerHTML = "<p><b>Mobile number:</b>123456789<br><b>Languages Known:</b> Telugu, Hindi<br><b>Address:</b> Khammam</p> ";
+}
+
+   //arrays
+   const company=["Infosys","Cognizant","Infinite Computer Solutions","capgemini"];
+   document.getElementById("arrays").innerHTML="Working in "+company[2];
+
+   //using this keyword
+   const hob={
+      set : "<b>HOBBIES:</b> ",
+     con: "LISTENING MUSIC, READING BOOKS, DRAWING",
+     info: function() {
+    return this.set + " " + this.con;
+   }
+};
+//displaying data from object
+document.getElementById("Hobby").innerHTML = hob.info(); 
+
+// strings
+
+
+  </script>
+</body>
+</html>

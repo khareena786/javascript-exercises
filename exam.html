@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Page</title>
+</head>
+<body>
+<h1>Search Page</h1>
+<p>Enter a station code to search for the station name:</p>
+<form>
+<input type="text" id="searchBox" placeholder="Enter station code...">
+<button type="button" onclick="searchStation()">Search</button>
+</form>
+
+ 
+
+    <div id="result"></div>
+
+ 
+
+    <script>
+        const stationData = [
+            { code: "MAN", name: "Manchester Piccadilly" },
+            { code: "LON", name: "London Paddington" },
+            { code: "BIR", name: "Birmingham New Street" },
+            { code: "LIV", name: "Liverpool Lime Street" },
+            { code: "LEE", name: "Leeds Station" },
+            // Add more station data as needed
+        ];
+
+ 
+
+        function searchStation() {
+            const searchTerm = document.getElementById('searchBox').value.trim().toUpperCase();
+            const resultDiv = document.getElementById('result');
+
+ 
+
+            const station = stationData.find(entry => entry.code === searchTerm);
+
+ 
+
+            if (station) {
+
+                resultDiv.textContent = `Station Name: ${station.name}`;
+                console.log(station.name);
+            } else {
+                resultDiv.textContent = "Station not found.";
+            }
+        }
+</script>
+</body>
+</html>

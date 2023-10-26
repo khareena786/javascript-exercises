@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="hi"></p>
+    <p id="hello"></p>
+    <p id="welcome"></p>
+
+    <div id="well" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; text-align: center; background-color: aquamarine; border-radius: 15px;"></div>
+    <p id="ij"></p>
+   
+
+    <script>
+  // Assign the value 5 to x
+let x = 5;
+// Assign the value 2 to y
+let y = 2;
+// Assign the value x + y to z
+    let z = x + y;
+   // Display z
+   document.getElementById("hi").innerHTML = "z: " + z;
+  //multiplication
+   let k = 100;
+   document.getElementById("hello").innerHTML = k * z;
+//concat
+let text1 = "cleared";
+let text2 = "Exam";
+let result = text1 + text2;
+document.getElementById("welcome").innerHTML = "hurray!! " +  result;
+/*let pin = 7;
+if (z==7){
+    print(Fail);
+}
+    else{
+        print(100);
+    }
+    document.getElementById("well").innerHTML = pin;*/
+    //if else
+
+//loops
+    const colors = ["green", "pink", "blue", "red"];
+let i, len, text;
+for (i = 0, len = colors.length, text = ""; i < len; i++) 
+{
+  text += colors[i] + "<br>";
+}
+document.getElementById("well").innerHTML = text;
+
+//
+/*function setweather(){
+const choice=select.value;
+if(choice==="Sunny"){
+para.textContent="you can have a fruit punch garnished with ice chips today"
+
+}else if (choice==="Rainy"){
+
+    para.textContent="you can have hot served dishes like samosa or paprika today"
+
+} else if(choice==="Windy"){
+
+    para.textContent="you should eat indoor food to sooth you like sushi or momos"
+
+} else if(choice==="Cloudy"){
+
+    para.textContent="enjoy bright foods like soup with bread"
+
+} else if(choice==="Snowing"){
+
+    para.textContent="have hot chocolate with bread"
+
+} else if(choice==="Cool"){
+
+    para.textContent="how about hotly served noodles with manchurian "
+
+} else{
+
+    para.textContent="you can never go wrong with a pizza, french fries and pepsi"
+
+}
+*/
+
+  //using let in a loop
+  let i = 5;
+for (let i = 0; i < 10; i++) {
+}
+document.getElementById("ij").innerHTML = i;
+
+
+
+    </script>
+</body>
+</html>
